@@ -1,0 +1,220 @@
+﻿<Window x:Class="Teamly4.ManagerMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Teamly4"
+        mc:Ignorable="d"
+        Title="ManagerMainWindow" Height="450" Width="800" Closed="Window_Closed">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition 
+                Height="85*"
+                />
+            <RowDefinition 
+                Height="15*"
+                />
+        </Grid.RowDefinitions>
+
+        <Grid 
+            Margin="0,0,724,65" 
+            Grid.RowSpan="2"
+            >
+
+            <DataGrid 
+                Name="DataGridManagerProjects" 
+                ColumnWidth="*" 
+                AutoGenerateColumns="False" 
+                IsReadOnly="True" 
+                SelectedCellsChanged="DataGridManagerProjects_SelectedCellsChanged"
+                DisplayMemberPath="Name" 
+                Margin="0,0,-12,0"
+                >
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                        Header="Проекты" 
+                        Binding="{Binding Name}"
+                        />
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+        <Grid 
+            Margin="66,0,384,65" 
+            Grid.RowSpan="2"
+            >
+
+            <Grid.RowDefinitions>
+                <RowDefinition 
+                    Height="25*"
+                    />
+                <RowDefinition 
+                    Height="75*"
+                    />
+            </Grid.RowDefinitions>
+
+            <TextBox 
+                x:Name="TextBoxProjectName" 
+                IsReadOnly="True" 
+                HorizontalAlignment="Left" 
+                Margin="10,6,0,0" 
+                TextWrapping="Wrap" 
+                Text="" 
+                VerticalAlignment="Top" 
+                Width="156" 
+                Height="30"
+                />
+            <TextBox 
+                x:Name="TextBoxProjectDescription"
+                HorizontalAlignment="Center" 
+                Margin="0,41,0,0" 
+                IsReadOnly="True"
+                TextWrapping="Wrap" 
+                Text="" 
+                VerticalAlignment="Top" 
+                Width="330" 
+                Height="41"
+                />
+            <DataGrid 
+                Name="DataGridPerformers" 
+                ColumnWidth="*" 
+                AutoGenerateColumns="False" 
+                IsReadOnly="True" 
+                SelectedCellsChanged="DataGridPerformers_SelectedCellsChanged"
+                Margin="10,92,165,0" 
+                Grid.RowSpan="2"
+                >
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                        Header="Исполнители" 
+                        Binding="{Binding userNames}"
+                        />
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid 
+                Name="DataGridTasks" 
+                ColumnWidth="*" 
+                AutoGenerateColumns="False" 
+                IsReadOnly="True" 
+                SelectedCellsChanged="DataGridTasks_SelectedCellsChanged"
+                Margin="185,92,0,0" 
+                Grid.RowSpan="2"
+                >
+                <DataGrid.Columns>
+                    <DataGridTextColumn 
+                        Header="Задачи" 
+                        Binding="{Binding }"
+                        />
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </Grid>
+
+        <Grid Margin="416,0,0,65" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition 
+                    Height="25*"
+                    />
+                <RowDefinition 
+                    Height="75*"
+                    />
+            </Grid.RowDefinitions>
+
+            <TextBox 
+                x:Name="TextBoxTaskName" 
+                IsReadOnly="True" 
+                HorizontalAlignment="Left" 
+                Margin="10,10,0,0" 
+                TextWrapping="Wrap" 
+                Text="" 
+                VerticalAlignment="Top" 
+                Width="210" 
+                Height="36"
+                />
+            <TextBox 
+                x:Name="TextBoxPerformer" 
+                IsReadOnly="True" 
+                HorizontalAlignment="Left" 
+                Margin="10,64,0,0" 
+                TextWrapping="Wrap" 
+                Text="" 
+                VerticalAlignment="Top" 
+                Width="120"
+                />
+            <TextBox 
+                x:Name="TextBoxTaskDescription" 
+                IsReadOnly="True" 
+                HorizontalAlignment="Center" 
+                Margin="0,10,0,0" 
+                Grid.Row="1" 
+                TextWrapping="Wrap" 
+                Text="" 
+                VerticalAlignment="Top" 
+                Width="364" 
+                Height="176"
+                />
+            <ComboBox 
+                x:Name="ComboBoxPriorities" 
+                HorizontalAlignment="Left" 
+                Margin="10,223,0,0" 
+                Grid.Row="1" 
+                VerticalAlignment="Top" 
+                Width="120"
+                />
+            <ComboBox 
+                x:Name="ComboBoxStatuses" 
+                HorizontalAlignment="Left" 
+                Margin="172,223,0,0" 
+                Grid.Row="1" 
+                VerticalAlignment="Top" 
+                Width="120"
+                />
+
+
+        </Grid>
+
+        <Button 
+            x:Name="ButtonAddProject" 
+            Content="Добавить" 
+            HorizontalAlignment="Left" 
+            Margin="10,10,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Click="ButtonAddProject_Click" 
+            />
+        <Button 
+            x:Name="ButtonDellProject" 
+            Content="Удалить" 
+            HorizontalAlignment="Left" 
+            Margin="10,35,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Click="ButtonDellProject_Click"
+            />
+
+        <Button 
+            x:Name="ButtonDelTask" 
+            Content="Удалить" 
+            HorizontalAlignment="Left" 
+            Margin="132,0,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Center" 
+            Click="ButtonDelTask_Click"
+            />
+        <Button 
+            x:Name="ByttonAddTask" 
+            Content="Добавить" 
+            HorizontalAlignment="Left" 
+            Margin="294,0,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Center" 
+            Click="ByttonAddTask_Click"
+            />
+        <Button x:Name="ButtonFinishTask" Content="Завершить" HorizontalAlignment="Left" Margin="460,25,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ButtonFinishTask_Click"/>
+        <Button x:Name="ButtonChangeTask" Content="Изменить" HorizontalAlignment="Left" Margin="608,25,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ButtonChangeTask_Click"/>
+
+    </Grid>
+</Window>

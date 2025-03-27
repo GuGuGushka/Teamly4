@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="67207fc703e74a7796622589e2b4637a" Name="Diagram1">
+        <EntityTypeShape EntityType="IUM2323DTeamlyModel.Performers" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IUM2323DTeamlyModel.Priorities" Width="1.5" PointX="8.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IUM2323DTeamlyModel.Projects" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IUM2323DTeamlyModel.Roles" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IUM2323DTeamlyModel.Statuses" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IUM2323DTeamlyModel.Tasks" Width="1.5" PointX="10.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IUM2323DTeamlyModel.Users" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IUM2323DTeamlyModel.UsersProjects" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_Performers_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_Performers_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_Tasks_Priorities" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_Projects_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_Tasks_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_UsersProjects_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_Tasks_Statuses" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_Tasks_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_Tasks_Users2" ManuallyRouted="false" />
+        <AssociationConnector Association="IUM2323DTeamlyModel.FK_UsersProjects_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

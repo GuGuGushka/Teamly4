@@ -58,10 +58,16 @@ namespace Teamly4
                                     .Join(db.Users,
                                             p => p.Workerid,
                                             u => u.Id,
-                                            (p, u) => u.UserName)
+                                            (p, u) => u.UserName
+                                            )
                                     .ToList();
 
-                var tasksNames
+                var tasksNames = db.Tasks
+                            .Where(
+                                    p => p.ProjectId == project.Id 
+                                    )
+                            .Select(t => t)
+                            .ToList();
 
                 DataGridPerformers.ItemsSource = null;
                 DataGridTasks.ItemsSource = null;
@@ -71,14 +77,17 @@ namespace Teamly4
             }
         }
 
-        private void DataGridPerformers_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
-        {
-
-        }
+        
 
         private void DataGridTasks_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
+            if (DataGridTasks.SelectedItem != null) 
+            { 
+                Tasks tasks = (Tasks)DataGridTasks.SelectedItem;
 
+                TextBoxTaskName.Text = tasks.Name;
+                TextBoxPerformer.Text = 
+            }
         }
 
         private void ButtonAddProject_Click(object sender, RoutedEventArgs e)

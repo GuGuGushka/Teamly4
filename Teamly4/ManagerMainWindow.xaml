@@ -82,7 +82,6 @@
                 ColumnWidth="*" 
                 AutoGenerateColumns="False" 
                 IsReadOnly="True" 
-                SelectedCellsChanged="DataGridPerformers_SelectedCellsChanged"
                 Margin="10,92,165,0" 
                 Grid.RowSpan="2"
                 >
@@ -105,7 +104,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn 
                         Header="Задачи" 
-                        Binding="{Binding }"
+                        Binding="{Binding Name}"
                         />
                 </DataGrid.Columns>
             </DataGrid>

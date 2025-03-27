@@ -27,7 +27,11 @@ namespace Teamly4
             try
             {
                 db = new IUM2323DTeamlyEntities();
-                DataGridManagerProjects.ItemsSource = db.Projects.ToList();
+                var currentUser = db
+                            .Users
+                            .FirstOrDefault(u => u.UserName == CurrentUserGlobal.Login && u.Password == CurrentUserGlobal.Password);
+
+                DataGridManagerProjects.ItemsSource = db.Projects.Where(x => x.ManagerId == currentUser.Id).ToList();
             }
             catch (Exception e)
             {
@@ -49,7 +53,7 @@ namespace Teamly4
                 TextBoxProjectName.Text = project.Name;
                 TextBoxProjectDescription.Text = project.Description;
 
-                var userNames = db.Performers
+                var performersUserNames = db.Performers
                                     .Where(p => p.Projectid == project.Id)
                                     .Join(db.Users,
                                             p => p.Workerid,
@@ -57,7 +61,13 @@ namespace Teamly4
                                             (p, u) => u.UserName)
                                     .ToList();
 
-                DataGridPerformers.ItemsSource = userNames;
+                var tasksNames
+
+                DataGridPerformers.ItemsSource = null;
+                DataGridTasks.ItemsSource = null;
+
+                DataGridPerformers.ItemsSource = performersUserNames;
+                DataGridTasks.ItemsSource = tasksNames;
             }
         }
 

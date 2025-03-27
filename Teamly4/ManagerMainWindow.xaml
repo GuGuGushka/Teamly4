@@ -89,7 +89,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn 
                         Header="Исполнители" 
-                        Binding="{Binding userNames}"
+                        Binding="{Binding}"
                         />
                 </DataGrid.Columns>
             </DataGrid>

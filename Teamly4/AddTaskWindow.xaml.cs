@@ -39,6 +39,31 @@ namespace Teamly4
 
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
+            if (TextBoxName.Text == null)
+            {
+                MessageBox.Show("Имя не заполнено");
+                return;
+            }
+            if (TextBoxDescription.Text == null)
+            {
+                MessageBox.Show("Описание не заполнено");
+                return;
+            }
+            if (ComboBoxStatuses.SelectedItem == null)
+            {
+                MessageBox.Show("Статус не выбран");
+                return;
+            }
+            if (ComboBoxPriorities.SelectedItem == null)
+            {
+                MessageBox.Show("Приоритет выполнения не выбран");
+                return;
+            }
+            if (ComboBoxPerformers.SelectedItem == null)
+            {
+                MessageBox.Show("Исполнитель не выбран не выбран");
+                return;
+            }
             Name = TextBoxName.Text;
             Description = TextBoxDescription.Text;
             status = (Statuses)ComboBoxStatuses.SelectedItem;

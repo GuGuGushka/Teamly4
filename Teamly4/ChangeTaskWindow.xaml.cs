@@ -41,14 +41,17 @@ namespace Teamly4
             if (Name.Length == 0)
             {
                 MessageBox.Show("Имя не заполнено");
+                return;
             }
             if (Description.Length == 0)
             {
                 MessageBox.Show("Описание не заполнено");
+                return;
             }
             if (PerformerOfTask == null)
             {
                 MessageBox.Show("Исполнитель не назначен");
+                return;
             }
             if (Name.Length != 0 && Description.Length != 0 && PerformerOfTask != null)
             {

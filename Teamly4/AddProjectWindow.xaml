@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Teamly4"
         mc:Ignorable="d"
-        Title="AddProjectWindow" Height="450" Width="400">
+        Title="AddProjectWindow" Height="450" Width="400" Closed="Window_Closed">
     <Grid>
         <Label 
             Content="Название" 
@@ -52,7 +52,14 @@
             VerticalAlignment="Top" 
             Width="120"
             />
-        
-        
+        <ListBox x:Name="ListBoxUsers" DisplayMemberPath="UserName" SelectionMode="Multiple" Margin="90,171,102,59">
+            
+                <DataTemplate>
+                    <TextBox Text="{Binding }" />
+                </DataTemplate>
+            
+        </ListBox>
+        <Button x:Name="ButtonSave" Content="Сохранить" HorizontalAlignment="Left" Margin="140,394,0,0" VerticalAlignment="Top" Width="100" Click="ButtonSave_Click"/>
+
     </Grid>
 </Window>

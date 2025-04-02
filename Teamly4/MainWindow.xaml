@@ -8,11 +8,37 @@
         Title="AuthWindow" Height="450" Width="800">
     <Grid>
         
-        <Label Content="username"  HorizontalAlignment="Left" Margin="315,169,0,0" VerticalAlignment="Top"/>
-        <Label Content="password"  HorizontalAlignment="Left" Margin="315,199,0,0" VerticalAlignment="Top"/>
+        <Label 
+            Content="username" 
+            HorizontalAlignment="Left" 
+            Margin="315,169,0,0" 
+            VerticalAlignment="Top"
+            />
+        <Label 
+            Content="password" 
+            HorizontalAlignment="Left" 
+            Margin="315,199,0,0" 
+            VerticalAlignment="Top"
+            />
 
-        <TextBox x:Name="TextBoxLogin"  HorizontalAlignment="Left" Margin="400,173,0,0" TextWrapping="Wrap" Text="Manager" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBoxPassword"  HorizontalAlignment="Left" Margin="400,207,0,0" TextWrapping="Wrap" Text="qwerty" VerticalAlignment="Top" Width="120"/>
+        <TextBox 
+            x:Name="TextBoxLogin" 
+            HorizontalAlignment="Left" 
+            Margin="400,173,0,0" 
+            TextWrapping="Wrap" 
+            Text="Manager" 
+            VerticalAlignment="Top" 
+            Width="120"
+            />
+        <TextBox 
+            x:Name="TextBoxPassword" 
+            HorizontalAlignment="Left" 
+            Margin="400,207,0,0" 
+            TextWrapping="Wrap" 
+            Text="qwerty" 
+            VerticalAlignment="Top" 
+            Width="120"
+            />
 
         <Button x:Name="ButtonAuth" Content="войти" HorizontalAlignment="Left" Margin="400,253,0,0" VerticalAlignment="Top" Width="120" Click="ButtonAuth_Click"/>
 

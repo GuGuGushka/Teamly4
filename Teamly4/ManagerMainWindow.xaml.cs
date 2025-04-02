@@ -256,7 +256,44 @@ namespace Teamly4
 
             if (addProjectWindow.ShowDialog() == true)
             {
+                Projects newProject = new Projects()
+                {
+                    Name = addProjectWindow.Name,
+                    Description = addProjectWindow.Description,
+                    StartTime = DateTime.Now,
+                    FinishTime = addProjectWindow.FinishDate,
+                    ManagerId = currentUser.Id,
+                };
 
+                db.Projects.Add(newProject);
+                db.SaveChanges();
+
+                UsersProjects newManagerUserProject = new UsersProjects()
+                {
+                    ProjectId = newProject.Id,
+                    UserId = currentUser.Id,
+                };
+                db.UsersProjects.Add(newManagerUserProject);
+                db.SaveChanges();
+
+                foreach (Users user in addProjectWindow.ListBoxUsers.SelectedItems)
+                {
+                    UsersProjects newUsersProjects = new UsersProjects()
+                    {
+                        ProjectId = newProject.Id,
+                        UserId = user.Id,
+                    };
+                    Performers performers = new Performers()
+                    {
+                        Projectid = newProject.Id,
+                        Workerid = user.Id,
+                    };
+                    db.UsersProjects.Add(newUsersProjects);
+                    db.Performers.Add(performers);
+                }
+                db.SaveChanges();
+
+                LoadProjectData();
             }
             else
             {

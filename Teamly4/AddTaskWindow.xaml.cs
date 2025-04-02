@@ -31,7 +31,7 @@ namespace Teamly4
         {
             InitializeComponent();
             db = new IUM2323DTeamlyEntities();
-            ComboBoxStatuses.ItemsSource = db.Statuses.Select(t => t).ToList();
+            ComboBoxStatuses.ItemsSource = db.Statuses.Where(t => t.Id != 1002).Select(t => t).ToList();
             ComboBoxPriorities.ItemsSource = db.Priorities.Select(t => t).ToList();
 
             ComboBoxPerformers.ItemsSource = CurrentProjectManagerGlobal.PerformersOfProject;

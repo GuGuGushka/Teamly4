@@ -405,7 +405,7 @@ namespace Teamly4
 
         private void ComboBoxPriorities_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ComboBoxPriorities.SelectedItem != null)
+            if (ComboBoxPriorities.SelectedItem != null && DataGridTasks.SelectedItem != null)
             {
                 Tasks tasks = (Tasks)DataGridTasks.SelectedItem;
 
@@ -419,7 +419,7 @@ namespace Teamly4
 
         private void ComboBoxStatuses_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ComboBoxStatuses.SelectedItem != null)
+            if (ComboBoxStatuses.SelectedItem != null && DataGridTasks.SelectedItem != null)
             {
                 Tasks tasks = (Tasks)DataGridTasks.SelectedItem;
 

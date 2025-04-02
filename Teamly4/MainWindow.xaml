@@ -26,16 +26,13 @@
             HorizontalAlignment="Left" 
             Margin="400,173,0,0" 
             TextWrapping="Wrap" 
-            Text="Manager" 
             VerticalAlignment="Top" 
-            Width="120"
-            />
+            Width="120" />
         <TextBox 
             x:Name="TextBoxPassword" 
             HorizontalAlignment="Left" 
             Margin="400,207,0,0" 
             TextWrapping="Wrap" 
-            Text="qwerty" 
             VerticalAlignment="Top" 
             Width="120"
             />

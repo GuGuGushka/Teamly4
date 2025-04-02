@@ -24,7 +24,7 @@ namespace Teamly4
         private readonly Users currentUser;
         public ManagerMainWindow()
         {
-            
+
             InitializeComponent();
 
             try
@@ -50,8 +50,11 @@ namespace Teamly4
                 DataGridManagerProjects.ItemsSource = db.Projects.Where(x => x.ManagerId == currentUser.Id).ToList();
 
                 ComboBoxPriorities.ItemsSource = db.Priorities.ToList();
-                ComboBoxStatuses.ItemsSource = db.Statuses.Where(t => t.Id != 1002).ToList();
-                
+                ComboBoxStatuses.ItemsSource = db
+                    .Statuses
+                    .Where(t => t.Id != 1002)
+                    .ToList();
+
             }
             catch (Exception e)
             {
@@ -80,7 +83,8 @@ namespace Teamly4
                 TextBoxStartDateTime.Text = CurrentProjectManagerGlobal.StartDateTime.ToString("yyyy-MM-dd");
                 TextBoxFinishDateTime.Text = CurrentProjectManagerGlobal.FinishDateTime.ToString("yyyy-MM-dd");
 
-                CurrentProjectManagerGlobal.PerformersOfProject = db.Performers
+                CurrentProjectManagerGlobal.PerformersOfProject = db
+                                    .Performers
                                     .Where(p => p.Projectid == project.Id)
                                     .Join(db.Users,
                                             p => p.Workerid,
@@ -89,8 +93,9 @@ namespace Teamly4
                                             )
                                     .ToList();
 
-                
-                CurrentProjectManagerGlobal.TasksNames = db.Tasks
+
+                CurrentProjectManagerGlobal.TasksNames = db
+                            .Tasks
                             .Where(
                                     p => p.ProjectId == project.Id && p.StatusId != 1002
                                     )
@@ -105,13 +110,13 @@ namespace Teamly4
             }
         }
 
-        
+
 
         private void DataGridTasks_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            
-            if (DataGridTasks.SelectedItem != null) 
-            { 
+
+            if (DataGridTasks.SelectedItem != null)
+            {
                 Tasks tasks = (Tasks)DataGridTasks.SelectedItem;
 
                 CurrentTaskManagerGlobal.Name = tasks.Name;
@@ -127,7 +132,7 @@ namespace Teamly4
             }
         }
 
-        
+
 
         private void ButtonDellProject_Click(object sender, RoutedEventArgs e)
         {
@@ -183,7 +188,7 @@ namespace Teamly4
                 Projects project = (Projects)DataGridManagerProjects.SelectedItem;
 
                 Tasks delTask = (Tasks)DataGridTasks.SelectedItem;
-                
+
                 db.Tasks.Remove(delTask);
 
                 db.SaveChanges();
@@ -248,10 +253,10 @@ namespace Teamly4
                 {
                     MessageBox.Show("Ошибка: " + ex.Message);
                 }
-            }         
+            }
         }
         private void ButtonAddProject_Click(object sender, RoutedEventArgs e)
-        {   
+        {
             var addProjectWindow = new AddProjectWindow();
 
             if (addProjectWindow.ShowDialog() == true)
@@ -298,7 +303,7 @@ namespace Teamly4
             else
             {
                 MessageBox.Show("Проект не добавлен");
-            }       
+            }
         }
 
         private void ByttonAddTask_Click(object sender, RoutedEventArgs e)
@@ -337,8 +342,8 @@ namespace Teamly4
                                 .ToList();
                         MessageBox.Show("Задача добавлена");
                     }
-                    catch (Exception ex) 
-                    { 
+                    catch (Exception ex)
+                    {
                         MessageBox.Show(ex.Message);
                     }
                 }
@@ -358,7 +363,7 @@ namespace Teamly4
 
                 var changeTaskWindow = new ChangeTaskWindow();
 
-                if(changeTaskWindow.ShowDialog() == true)
+                if (changeTaskWindow.ShowDialog() == true)
                 {
                     currentTask.Name = changeTaskWindow.Name;
                     currentTask.Description = changeTaskWindow.Description;
@@ -385,12 +390,12 @@ namespace Teamly4
                             .Select(t => t)
                             .ToList();
                     }
-                    catch (Exception ex) 
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Ошибка: " + ex);
                     }
 
-                } 
+                }
                 else
                 {
                     MessageBox.Show("Данные не сохранены");
@@ -401,7 +406,7 @@ namespace Teamly4
                 MessageBox.Show("Сначала выберите задачу");
             }
         }
-        
+
 
         private void ComboBoxPriorities_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

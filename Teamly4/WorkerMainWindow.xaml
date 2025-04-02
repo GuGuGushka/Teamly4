@@ -117,6 +117,8 @@
             Text="" 
             VerticalAlignment="Top"
             Width="85"
+                
+                IsReadOnly="True"
             />
             <TextBox 
             x:Name="TextBoxFinishDateTime"
@@ -126,6 +128,7 @@
             Text="" 
             VerticalAlignment="Top" 
             Width="102"
+                IsReadOnly="True"
             />
 
 
@@ -189,7 +192,7 @@
         </Grid>
 
 
-        
+
         <Button x:Name="ButtonFinishTask" Content="Завершить" HorizontalAlignment="Left" Margin="460,25,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ButtonFinishTask_Click"/>
 
     </Grid>

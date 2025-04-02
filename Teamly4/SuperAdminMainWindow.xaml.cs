@@ -119,7 +119,6 @@ namespace Teamly4
 
         private void ButtonChange_Click(object sender, RoutedEventArgs e)
         {
-            int updatedId = int.Parse(TextBoxId.Text);
 
             if (TextBoxUsername.Text.Length == 0)
             {
@@ -144,6 +143,8 @@ namespace Teamly4
                 MessageBox.Show("Ошибка. Имя должно быть заполнено.");
                 return;
             }
+
+            int updatedId = int.Parse(TextBoxId.Text);
 
             Users updatedUser = db.Users.FirstOrDefault(user => user.Id == updatedId);
 

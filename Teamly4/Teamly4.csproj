@@ -64,6 +64,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddProjectWindow.xaml.cs">
+      <DependentUpon>AddProjectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddTaskWindow.xaml.cs">
+      <DependentUpon>AddTaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeTaskWindow.xaml.cs">
+      <DependentUpon>ChangeTaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentProjectManagerGlobal.cs" />
+    <Compile Include="CurrentTaskManagerGlobal.cs" />
     <Compile Include="CurrentUserGlobal.cs" />
     <Compile Include="IUM2323DTeamly.cs">
       <AutoGen>True</AutoGen>
@@ -103,6 +114,18 @@
     <Compile Include="WorkerMainWindow.xaml.cs">
       <DependentUpon>WorkerMainWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddProjectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddTaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeTaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

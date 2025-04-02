@@ -63,7 +63,7 @@
                 TextWrapping="Wrap" 
                 Text="" 
                 VerticalAlignment="Top" 
-                Width="156" 
+                Width="125" 
                 Height="30"
                 />
             <TextBox 
@@ -87,8 +87,8 @@
                 >
                 <DataGrid.Columns>
                     <DataGridTextColumn 
-                        Header="Исполнители" 
-                        Binding="{Binding}"
+                        Header="Участники проекта" 
+                        Binding="{Binding UserName}"
                         />
                 </DataGrid.Columns>
             </DataGrid>
@@ -108,6 +108,40 @@
                         />
                 </DataGrid.Columns>
             </DataGrid>
+
+            <Label 
+                Content="Начало" 
+                HorizontalAlignment="Left" 
+                Margin="140,0,0,0" 
+                VerticalAlignment="Top" 
+                Height="27" 
+                Width="57"
+                />
+            <Label 
+                Content="Конец" 
+                HorizontalAlignment="Left" 
+                Margin="238,0,0,0" 
+                VerticalAlignment="Top" 
+                Height="27"
+                />
+            <TextBox 
+                x:Name="TextBoxStartDateTime"
+                HorizontalAlignment="Left" 
+                Margin="140,21,0,0" 
+                TextWrapping="Wrap" 
+                Text="" 
+                VerticalAlignment="Top"
+                Width="85"
+                />
+            <TextBox 
+                x:Name="TextBoxFinishDateTime"
+                HorizontalAlignment="Left" 
+                Margin="238,21,0,0" 
+                TextWrapping="Wrap" 
+                Text="" 
+                VerticalAlignment="Top" 
+                Width="102"
+                />
 
 
         </Grid>
@@ -162,6 +196,8 @@
                 Grid.Row="1" 
                 VerticalAlignment="Top" 
                 Width="120"
+                DisplayMemberPath="Name"
+                SelectionChanged="ComboBoxPriorities_SelectionChanged"
                 />
             <ComboBox 
                 x:Name="ComboBoxStatuses" 
@@ -170,6 +206,8 @@
                 Grid.Row="1" 
                 VerticalAlignment="Top" 
                 Width="120"
+                DisplayMemberPath="Name"
+                SelectionChanged="ComboBoxStatuses_SelectionChanged"
                 />
 
 

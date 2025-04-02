@@ -1,0 +1,58 @@
+﻿<Window x:Class="Teamly4.AddProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Teamly4"
+        mc:Ignorable="d"
+        Title="AddProjectWindow" Height="450" Width="400">
+    <Grid>
+        <Label 
+            Content="Название" 
+            HorizontalAlignment="Left" 
+            Margin="59,53,0,0" 
+            VerticalAlignment="Top"
+            />
+        <Label 
+            Content="Описание" 
+            HorizontalAlignment="Left" 
+            Margin="59,84,0,0" 
+            VerticalAlignment="Top"
+            />
+        <Label 
+            Content="Дата завершения" 
+            HorizontalAlignment="Left" 
+            Margin="16,115,0,0" 
+            VerticalAlignment="Top"
+            />
+        <TextBox 
+            x:Name="TextBoxName" 
+            HorizontalAlignment="Center" 
+            Margin="0,57,0,0" 
+            TextWrapping="Wrap" 
+            Text="" 
+            VerticalAlignment="Top" 
+            Width="120"
+            />
+        <TextBox 
+            x:Name="TextBoxDescription" 
+            HorizontalAlignment="Center" 
+            Margin="0,88,0,0" 
+            TextWrapping="Wrap" 
+            Text="" 
+            VerticalAlignment="Top" 
+            Width="120"
+            />
+        <TextBox 
+            x:Name="TextBoxFinishTime" 
+            HorizontalAlignment="Center" 
+            Margin="0,119,0,0" 
+            TextWrapping="Wrap" 
+            Text="" 
+            VerticalAlignment="Top" 
+            Width="120"
+            />
+        
+        
+    </Grid>
+</Window>

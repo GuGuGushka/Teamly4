@@ -58,7 +58,7 @@ namespace Teamly4
             TextBoxFinishDateTime.Text = project.FinishTime.ToString("yyyy-MM-dd");
 
             DataGridTasks.ItemsSource = null;
-            DataGridTasks.ItemsSource = project.Tasks.Where(x => x.WorkerId == currentUser.Id);  
+            DataGridTasks.ItemsSource = project.Tasks.Where(x => x.WorkerId == currentUser.Id && x.StatusId != 1002);  
 
         }
 
